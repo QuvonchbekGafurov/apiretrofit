@@ -16,12 +16,12 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesRetrofitInstance(): ApiService =
+    fun providesRetrofitInstance(): Retrofit =
         Retrofit.Builder()
             .baseUrl("https://reqres.in/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(ApiService::class.java)
+
 
     @Provides
     @Singleton
