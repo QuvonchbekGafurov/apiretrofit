@@ -1,7 +1,8 @@
-package com.example.task1copy.di
+package com.example.task1copy.data.di
 
-import com.example.task1copy.api.ApiService
-import com.example.task1copy.repository.Repository
+import com.example.task1copy.UseCase.domain.Repository
+import com.example.task1copy.data.Repository.RepositoryImple
+import com.example.task1copy.data.api.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+class DataModule {
 
     @Provides
     @Singleton
@@ -28,10 +29,10 @@ object AppModule {
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
-
     @Provides
     @Singleton
     fun provideMainRepository(apiService: ApiService): Repository {
-        return Repository(apiService)
+        return RepositoryImple(apiService)
     }
+
 }

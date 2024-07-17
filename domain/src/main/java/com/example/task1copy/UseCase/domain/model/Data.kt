@@ -1,4 +1,4 @@
-package com.example.task1copy.model
+package com.example.task1copy.UseCase.domain.model
 
 data class Data(
     val avatar: String,

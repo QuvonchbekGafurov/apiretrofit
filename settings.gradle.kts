@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Task1 copy"
 include(":app")
- 
+include(":data")
+include(":domain")
