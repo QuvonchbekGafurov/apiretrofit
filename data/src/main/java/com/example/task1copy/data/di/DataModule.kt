@@ -3,6 +3,7 @@ package com.example.task1copy.data.di
 import com.example.task1copy.UseCase.domain.Repository
 import com.example.task1copy.data.Repository.RepositoryImple
 import com.example.task1copy.data.api.ApiService
+import com.example.task1copy.data.useCase.GetUserUseCaseImple
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,5 +35,4 @@ class DataModule {
     fun provideMainRepository(apiService: ApiService): Repository {
         return RepositoryImple(apiService)
     }
-
 }
